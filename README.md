@@ -1,3 +1,12 @@
+# Fork notes
+This is a fork of https://github.com/suaefar/ryzen-test; I have introduced minor configuration options:
+* The initial script required `apt-get` (Ubuntu) or `dnf` (Fedora) to install its dependencies which is not portable across distributions. Therefore when run on non-ubuntu/non-fedora system the script would assume that all its dependencies are installed and will continue running
+* Working mount directory can be configured via the `MNT` environment variable. If the variable is not set, the script would default to `/mnt`
+* GCC version can be configured via the `GCC` environment variable. If not set, the script would default to `6.4.0` (the current GCC version on my Gentoo system)
+
+Following is the original README file:
+-----------------------
+
 # ryzen-test
 Script to reproduce randomly crashing processes under load on AMD Ryzen processors on _Ubuntu 17.04_(!).
 
